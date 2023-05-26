@@ -1,4 +1,4 @@
-<mat-toolbar class="max-7xl mx-auto border-x flex justify-between">
+<mat-toolbar class="max-w-7xl mx-auto border-x flex justify-between">
   <a routerLink="home">AppStore</a>
   <button mat-icon-button [matMenuTriggerFor]="menu">
     <mat-icon [matBadge]="1" matBadgeColor="warn">shopping_cart</mat-icon>
@@ -28,7 +28,7 @@
             <div class="font-bold">{{'450' | currency}}</div>
         </div>
        <div class="divide-y">
-            <button routerLink="cart" class="bg-rose-700 rounded-full text-white p-3 mt-4">
+            <button routerLink="cart" class="bg-rose-700 rounded-full text-white w-10 h-10">
                 <mat-icon>remove_shopping_cart</mat-icon>
             </button>
        </div>
