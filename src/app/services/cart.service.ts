@@ -38,7 +38,7 @@ export class CartService {
   }
 
   removeItemFromCart(itemToRemove: CartItem): CartItem[] {
-    const items = this.cart.value.items.filter((item) => item.id !== item.id);
+    const items = this.cart.value.items.filter((item) => item.id !== itemToRemove.id);
     this.cart.next({ items });
     return items;
   }

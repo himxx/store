@@ -24,6 +24,7 @@ import { ProductsHeaderComponent } from './pages/home/products-header/products-h
 import { FiltersComponent } from './pages/home/filters/filters.component';
 import { ProductComponent } from './pages/home/product/product.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -54,7 +55,8 @@ import { CartComponent } from './pages/cart/cart.component';
     MatMenuModule,
     MatBadgeModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

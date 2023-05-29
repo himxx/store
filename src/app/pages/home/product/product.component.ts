@@ -7,14 +7,7 @@ import { Product } from 'src/app/models/Product';
 })
 export class ProductComponent {
   @Input() fullWithMode:boolean = false;
-  product:Product | undefined = {
-    id:1,
-    title:'Snickers',
-    price:150,
-    category:'shoes',
-    description:'Super',
-    image:'https://via.placeholder.com/150'
-  }
+  @Input() product!:Product;
 
   @Output() addToCart:EventEmitter<Product> = new EventEmitter();
 
