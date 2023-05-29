@@ -1,6 +1,6 @@
 # Store
 Simple shopping cart in angular, angular material and tailwindcss.
-https://rafalk-store.netlify.app/home
+https://rafalk-store.netlify.app
 
 
 
