@@ -13,12 +13,12 @@ export class ProductComponent {
     price:150,
     category:'shoes',
     description:'Super',
-    image:'https://via.placeholdeer.com/150'
+    image:'https://via.placeholder.com/150'
   }
 
   @Output() addToCart:EventEmitter<Product> = new EventEmitter();
 
   onAddToCart():void {
-    this.addToCart.emit(this.product)
+    this.addToCart.emit(this.product);
   }
 }

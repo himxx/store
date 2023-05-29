@@ -1,13 +1,16 @@
 import { DataSource } from "@angular/cdk/collections";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
 import { Cart, CartItem } from "src/app/models/Cart";
+import { CartService } from "src/app/services/cart.service";
 
 @Component({
   selector: "app-cart",
   templateUrl: "./cart.component.html",
   styles: [],
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
+  cartSubscription!: Subscription;
   cart: Cart = {
     items: [
       {
@@ -37,19 +40,40 @@ export class CartComponent implements OnInit {
     "action",
   ];
 
+  constructor(private cartService: CartService) {}
+
   ngOnInit(): void {
-    this.dataSource = this.cart.items;
+    this.cartSubscription = this.cartService.cart.subscribe((cart) => {
+      this.dataSource = cart.items;
+      this.cart = cart;
+    });
   }
 
-  getTotalPrice(items:CartItem[]):number {
-    return items.map(item => {
-     return item.price * item.quantity
-    }).reduce((prev, current) => prev + current, 0 )
-  }
-
-  getTotal(element:any):number {
+  getTotal(element: any): number {
     return element.price * element.quantity;
   }
 
+  getTotalPrice(items: CartItem[]): number {
+    return this.cartService.getTotalPrice(items);
+  }
 
+  removeItemFromCart(item:CartItem) {
+    this.cartService.removeItemFromCart(item);
+  }
+
+  clearCart():void {
+    this.cartService.clearCart();
+  }
+
+  addQuantity(item:CartItem):void {
+    this.cartService.addToCart(item);
+  }
+
+  reduceQuantity(item:CartItem):void {
+    this.cartService.reduceQuantity(item);
+  }
+
+  ngOnDestroy(): void {
+    this.cartSubscription.unsubscribe();
+  }
 }
