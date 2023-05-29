@@ -1,4 +1,8 @@
 # Store
+Simple shopping cart in angular, angular material and tailwindcss.
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
