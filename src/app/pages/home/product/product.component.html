@@ -1,0 +1,27 @@
+<mat-card [ngClass]="{ 'text-center': !fullWithMode }">
+  <div [ngClass]="{ flex: fullWithMode }">
+    <img
+      class="mx-auto"
+      [ngClass]="fullWithMode ? 'h-[360px]' : 'h-[200px]'"
+      src="https://via.placeholder.com/150"
+    />
+    <div
+      class="w-full p-2"
+      [ngClass]="{ 'flex flex-col justify-between': fullWithMode }"
+    >
+      <div>
+        <h5>Shoes</h5>
+        <p class="truncate hover:whitespace-normal">Snoickers</p>
+        <p *ngIf="fullWithMode">description</p>
+      </div>
+      <div class="flex justify-between items-center">
+        <span class="text-red-400 font-bold">
+          {{ "150" | currency }}
+        </span>
+        <button (click)="onAddToCart()">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</mat-card>

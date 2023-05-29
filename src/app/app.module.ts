@@ -15,12 +15,15 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductsHeaderComponent } from './pages/home/products-header/products-header.component';
 import { FiltersComponent } from './pages/home/filters/filters.component';
+import { ProductComponent } from './pages/home/product/product.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 
 
@@ -31,7 +34,9 @@ import { FiltersComponent } from './pages/home/filters/filters.component';
     HeaderComponent,
     HomeComponent,
     ProductsHeaderComponent,
-    FiltersComponent
+    FiltersComponent,
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,8 @@ import { FiltersComponent } from './pages/home/filters/filters.component';
     MatIconModule,
     MatMenuModule,
     MatBadgeModule,
-    MatButtonModule
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
